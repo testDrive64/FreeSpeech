@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'crispy_forms',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -121,3 +122,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+LOGIN_URL = 'freeSpeech_login'
+LOGOUT_URL = 'freeSpeech_logout'
+LOGIN_REDIRECT_URL = 'marcador_bookmark_list'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
