@@ -16,6 +16,8 @@ Including another URLconf
 from django.conf.urls import include, url
 import django.contrib.auth.views
 
+from . import views
+
 from django.contrib import admin
 admin.autodiscover()
 
@@ -23,5 +25,6 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/login/$', django.contrib.auth.views.login, name='login'),
     url(r'^accounts/logout/$', django.contrib.auth.views.logout, name='logout', kwargs={'next_page': '/'}),
+    url(r'^sign_in', views.sign_in, name='sign_in'),
     url(r'', include('blog.urls')),
 ]
